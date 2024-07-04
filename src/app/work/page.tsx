@@ -46,7 +46,8 @@ const Work = () => {
         <Box
           sx={{
             textAlign: 'center',
-            padding: 8,
+            padding: 9,
+
             [theme.breakpoints.down('sm')]: {
               padding: 1
 
@@ -54,104 +55,116 @@ const Work = () => {
 
           }}
         >
-          <Button
-            onClick={() => handleTypeToggle('all')}
+          <Box
             sx={{
-              marginLeft: '8%',
-              fontWeight: "bold",
-              color: active === 'all' ? 'black' : '#EFDD00',
-              borderColor: '#EFDD00',
-              '&:hover': {
-                backgroundColor: '#EFDD00',
-                color: 'black',
-              },
-              ...(active === 'all' && {
-                backgroundColor: '#EFDD00',
-                color: 'black',
-              }),
+              display: 'flex',
+              justifyContent: 'center',
+              paddingLeft: 10,
+              gap: 1
             }}
-            variant="outlined"
           >
-            All
-          </Button>
-          <Button
-            onClick={() => handleTypeToggle('professional')}
-            sx={{
-              fontWeight: "bold",
-              marginLeft: 2,
-              color: active === 'professional' ? 'black' : '#EFDD00',
-              borderColor: '#EFDD00',
-              '&:hover': {
-                backgroundColor: '#EFDD00',
-                color: 'black',
-              },
-              ...(active === 'professional' && {
-                backgroundColor: '#EFDD00',
-                color: 'black',
-              }),
-            }}
-            variant="outlined"
-          >
-            Professional
-          </Button>
-          <Button
-            onClick={() => handleTypeToggle('openSource')}
-            sx={{
-              fontWeight: "bold",
-              marginLeft: 2,
-              color: active === 'openSource' ? 'black' : '#EFDD00',
-              borderColor: '#EFDD00',
-              '&:hover': {
-                backgroundColor: '#EFDD00',
-                color: 'black',
-              },
-              ...(active === 'openSource' && {
-                backgroundColor: '#EFDD00',
-                color: 'black',
-              }),
-            }}
-            variant="outlined"
-          >
-            Open Source
-          </Button>
+            <Button
+              onClick={() => handleTypeToggle('all')}
+              sx={{
+
+                fontWeight: "bold",
+                color: active === 'all' ? 'black' : '#EFDD00',
+                borderColor: '#EFDD00',
+                '&:hover': {
+                  backgroundColor: '#EFDD00',
+                  color: 'black',
+                },
+                ...(active === 'all' && {
+                  backgroundColor: '#EFDD00',
+                  color: 'black',
+                }),
+              }}
+              variant="outlined"
+            >
+              All
+            </Button>
+            <Button
+              onClick={() => handleTypeToggle('professional')}
+              sx={{
+                fontWeight: "bold",
+                color: active === 'professional' ? 'black' : '#EFDD00',
+                borderColor: '#EFDD00',
+                '&:hover': {
+                  backgroundColor: '#EFDD00',
+                  color: 'black',
+                },
+                ...(active === 'professional' && {
+                  backgroundColor: '#EFDD00',
+                  color: 'black',
+                }),
+              }}
+              variant="outlined"
+            >
+              Professional
+            </Button>
+            <Button
+              onClick={() => handleTypeToggle('openSource')}
+              sx={{
+                fontWeight: "bold",
+
+                color: active === 'openSource' ? 'black' : '#EFDD00',
+                borderColor: '#EFDD00',
+                '&:hover': {
+                  backgroundColor: '#EFDD00',
+                  color: 'black',
+                },
+                ...(active === 'openSource' && {
+                  backgroundColor: '#EFDD00',
+                  color: 'black',
+                }),
+              }}
+              variant="outlined"
+            >
+              Open Source
+            </Button>
+          </Box>
         </Box>
+        {/* Grid Start Here */}
 
         <Box
           sx={{
-            display: 'grid',
-            paddingTop: 0,
-            gridTemplateColumns: isXl ? 'repeat(4, 1fr)' : isLg ? 'repeat(3, 1fr)' : isMd ? 'repeat(2, 1fr)' : 'repeat(1, 1fr)',
-            gap: 1,
+            display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center',
-            [theme.breakpoints.down('md')]: {
-              marginLeft: '20%',
-              marginRight: 'auto',
-              padding: 2,
-              width: 500
-            },
-            [theme.breakpoints.down('sm')]: {
-              padding: 2,
-              margin: 0,
-              width: '90%',
-
-            },
-
           }}
         >
-          {projects.map((project, index) => (
-            <Box
-              key={index}
-              sx={{
-                marginLeft: "0.3rem",
-                marginBottom: '0rem',
-              }}
-            >
-              <WorkCard workData={project} />
-            </Box>
-          ))}
+          <Box
+            sx={{
+              display: 'grid',
+
+              gridTemplateColumns: isXl ? 'repeat(4, 1fr)' : isLg ? 'repeat(3, 1fr)' : isMd ? 'repeat(2, 1fr)' : 'repeat(1, 1fr)',
+              gap: 2,
+
+
+              [theme.breakpoints.down('md')]: {
+                marginLeft: '20%',
+                marginRight: 'auto',
+                padding: 2,
+                width: 500
+              },
+              [theme.breakpoints.down('sm')]: {
+                padding: 2,
+                margin: 0,
+                width: '90%',
+
+              },
+
+            }}
+          >
+            {projects.map((project, index) => (
+              <Box
+                key={index}
+              >
+                <WorkCard workData={project} />
+              </Box>
+            ))}
+          </Box>
         </Box>
-      </Box>
+      </Box >
     </>
   );
 };

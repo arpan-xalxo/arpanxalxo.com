@@ -1,6 +1,10 @@
 import { purple, grey } from '@mui/material/colors';
+import { css, minWidth } from '@mui/system';
+
 
 export const GLOBAL_STYLES = {
+
+
   body: {
     margin: 4,
     backgroundColor: '#00001a', // Very dark purple background color
@@ -22,4 +26,5 @@ export const GLOBAL_STYLES = {
     lineHeight: '1.8',
     letterSpacing: '0.00938em',
   },
+
 };

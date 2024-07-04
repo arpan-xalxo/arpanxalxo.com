@@ -54,7 +54,7 @@ const DrawerNav: React.FC = () => {
           sx={{
             backgroundColor: '#00001a',
             paddingLeft: 1,
-            height: 568,
+            height: 655,
           }}
         >
           {icons.map(({ href, src, label }) => (

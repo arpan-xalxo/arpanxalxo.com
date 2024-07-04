@@ -1,10 +1,11 @@
 
+
 import { getApiResponse } from '@/utils/shared/get-api-response';
 
 import { NpmData, PageParams } from '@/types';
-import { Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import Homepage from './Home/home';
-
+import styled from '@emotion/styled';
 
 
 
@@ -39,6 +40,7 @@ const AppHome = async ({ searchParams }: PageParams) => {
 
   return (
     <>
+
       <Homepage />
     </>
   );

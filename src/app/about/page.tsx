@@ -43,7 +43,7 @@ const AboutContainer = styled(Box)(({ theme }) => ({
     right: 5,
   },
   [theme.breakpoints.down('lg')]: {
-    width: '100%',
+    width: '70%',
     marginRight: 0,
   },
   [theme.breakpoints.down('md')]: {

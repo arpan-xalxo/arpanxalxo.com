@@ -54,7 +54,7 @@ export default function RootLayout({
     <html lang='en'>
       <GlobalStyles styles={GLOBAL_STYLES} />
       <body>
-        <Container sx={{ pl: 0, pr: 0 }}>{children}</Container>
+        {children}
       </body>
     </html>
   );
