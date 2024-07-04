@@ -19,178 +19,180 @@ const Home: React.FC = () => {
   return (
     <>
 
-      <Box sx={{ marginLeft: 0 }}>
+      <Box >
         <SideNav />
       </Box>
       {/* Main Content */}
-      <Box sx={{
-        display: 'flex',
-        paddingLeft: 5,
-        paddingTop: 20,
-        flexDirection: 'column',
-        alignItems: 'start',
-        gap: '10px',
-        textAlign: 'left',
 
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between'
+        }}
 
-
-
-      }}>
-        {/* Hi, and MonkeyWorking Animation */}
+      >
         <Box sx={{
           display: 'flex',
-          alignItems: 'center',
-          gap: '5px',
-          flexDirection: 'row',
+          paddingLeft: 2,
+          paddingTop: 20,
+          flexDirection: 'column',
+          alignItems: 'start',
+          gap: '10px',
+          textAlign: 'left',
+          [theme.breakpoints.down('lg')]: {
+            backgroundColor: 'white'
+          },
         }}>
-          <Typography variant="h3" sx={{
-            color: '#EFDD00',
-            fontWeight: 'bold',
-            fontSize: '7em',
-            margin: '0 0 -20px 0',
-            fontFamily: 'Poppins, sans-serif'
-          }}>
-            Hi,
-          </Typography>
+          {/* Hi, and MonkeyWorking Animation */}
           <Box sx={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'flex-end',
             gap: '5px',
-            margin: '0 0 -15px -30px',
+            flexDirection: 'row',
           }}>
-            <LottieAnimation animationData={MonkeyWorking} width={150} height={100} />
+            <Typography variant="h3" sx={{
+              color: '#EFDD00',
+              fontWeight: 'bold',
+              fontSize: '7em',
+              margin: '0 0 -20px 0',
+              fontFamily: 'Poppins, sans-serif'
+            }}>
+              Hi,
+            </Typography>
+            <Box sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'flex-end',
+              gap: '5px',
+              margin: '0 0 -15px -30px',
+            }}>
+              <LottieAnimation animationData={MonkeyWorking} width={150} height={100} />
+            </Box>
           </Box>
-        </Box>
 
-        <Typography variant="h5" sx={{
-          color: '#ffffff',
-          fontWeight: 'bold',
-          fontSize: '4em',
-          margin: '0 0 -15px 0',
-          fontFamily: 'Roboto, sans-serif'
-        }}>
-          I'm Arpan,
-        </Typography>
-        <Typography variant="h5" sx={{
-          color: '#ffffff',
-          fontWeight: 'bold',
-          fontSize: '4em',
-          margin: '0 0 -15px 0',
-          fontFamily: 'Poppins, sans-serif'
-        }}>
-          Software Developer,
-        </Typography>
-        <Typography variant="subtitle1" sx={{
-          color: '#757575',
-          fontSize: '1em',
-          margin: '0',
-          marginTop: 1,
-          fontFamily: 'Roboto, sans-serif'
-        }}>
-          Based out of Bangalore
-        </Typography>
+          <Typography variant="h5" sx={{
+            color: '#ffffff',
+            fontWeight: 'bold',
+            fontSize: '4em',
+            margin: '0 0 -15px 0',
+            fontFamily: 'Roboto, sans-serif'
+          }}>
+            I'm Arpan,
+          </Typography>
+          <Typography variant="h5" sx={{
+            color: '#ffffff',
+            fontWeight: 'bold',
+            fontSize: '4em',
+            margin: '0 0 -15px 0',
+            fontFamily: 'Poppins, sans-serif'
+          }}>
+            Software Developer,
+          </Typography>
+          <Typography variant="subtitle1" sx={{
+            color: '#757575',
+            fontSize: '1em',
+            margin: '0',
+            marginTop: 1,
+            fontFamily: 'Roboto, sans-serif'
+          }}>
+            Based out of Bangalore
+          </Typography>
 
-        {/* Know More Button */}
-        <Link href="/about">
-          <Button
-            variant="outlined"
-            sx={{
-              color: '#FF5722',
-              borderColor: '#FF5722',
-              fontFamily: 'Poppins, sans-serif',
-              fontSize: '0.8em',
-              padding: '8px 16px',
-              marginTop: '10px',
-              transition: 'background-color 0.3s, color 0.3s',
-              '&:hover': {
-                backgroundColor: '#FFA27F',
-                color: '#ffffff',
-              },
-            }}
-          >
-            Know more
-          </Button>
-        </Link>
+          {/* Know More Button */}
+          <Link href="/about">
+            <Button
+              variant="outlined"
+              sx={{
+                color: '#FF5722',
+                borderColor: '#FF5722',
+                fontFamily: 'Poppins, sans-serif',
+                fontSize: '0.8em',
+                padding: '8px 16px',
+                marginTop: '10px',
+                transition: 'background-color 0.3s, color 0.3s',
+                '&:hover': {
+                  backgroundColor: '#FFA27F',
+                  color: '#ffffff',
+                },
+              }}
+            >
+              Know more
+            </Button>
+          </Link>
 
-        <Box sx={{ marginTop: '10px', marginLeft: '-5px' }}>
-          <IconButton
-            component="a"
-            href="https://www.instagram.com/arpanxalxo21/"
-            target="_blank"
-            sx={{
-              padding: '5px',
-              fontSize: '0.6rem',
-              color: '#DB5353',
-              borderColor: '#DB5353',
-              borderRadius: '50%',
-              border: '0.5px solid',
-              margin: '0 5px',
-              transition: 'background-color 0.3s, color 0.3s',
-              '&:hover': {
-                backgroundColor: '#FFA27F',
-                color: '#ffffff',
-              },
-            }}
-          >
-            <InstagramIcon />
-          </IconButton>
-          <IconButton
-            component="a"
-            href="https://twitter.com/"
-            target="_blank"
-            sx={{
-              padding: '5px',
-              fontSize: '0.6rem',
-              color: '#DB5353',
-              borderColor: '#DB5353',
-              borderRadius: '50%',
-              border: '0.5px solid',
-              margin: '0 5px',
-              transition: 'background-color 0.3s, color 0.3s',
-              '&:hover': {
-                backgroundColor: '#FFA27F',
-                color: '#ffffff',
-              },
-            }}
-          >
-            <TwitterIcon />
-          </IconButton>
-          <IconButton
-            component="a"
-            href="https://github.com/arpan-xalxo"
-            target="_blank"
-            sx={{
-              padding: '5px',
-              fontSize: '0.6rem',
-              color: '#DB5353',
-              borderColor: '#DB5353',
-              borderRadius: '50%',
-              border: '0.5px solid',
-              margin: '0 5px',
-              transition: 'background-color 0.3s, color 0.3s',
-              '&:hover': {
-                backgroundColor: '#FFA27F',
-                color: '#ffffff',
-              },
-            }}
-          >
-            <GitHubIcon />
-          </IconButton>
+          <Box sx={{ marginTop: '10px', marginLeft: '-5px' }}>
+            <IconButton
+              component="a"
+              href="https://www.instagram.com/arpanxalxo21/"
+              target="_blank"
+              sx={{
+                padding: '5px',
+                fontSize: '0.6rem',
+                color: '#DB5353',
+                borderColor: '#DB5353',
+                borderRadius: '50%',
+                border: '0.5px solid',
+                margin: '0 5px',
+                transition: 'background-color 0.3s, color 0.3s',
+                '&:hover': {
+                  backgroundColor: '#FFA27F',
+                  color: '#ffffff',
+                },
+              }}
+            >
+              <InstagramIcon />
+            </IconButton>
+            <IconButton
+              component="a"
+              href="https://twitter.com/"
+              target="_blank"
+              sx={{
+                padding: '5px',
+                fontSize: '0.6rem',
+                color: '#DB5353',
+                borderColor: '#DB5353',
+                borderRadius: '50%',
+                border: '0.5px solid',
+                margin: '0 5px',
+                transition: 'background-color 0.3s, color 0.3s',
+                '&:hover': {
+                  backgroundColor: '#FFA27F',
+                  color: '#ffffff',
+                },
+              }}
+            >
+              <TwitterIcon />
+            </IconButton>
+            <IconButton
+              component="a"
+              href="https://github.com/arpan-xalxo"
+              target="_blank"
+              sx={{
+                padding: '5px',
+                fontSize: '0.6rem',
+                color: '#DB5353',
+                borderColor: '#DB5353',
+                borderRadius: '50%',
+                border: '0.5px solid',
+                margin: '0 5px',
+                transition: 'background-color 0.3s, color 0.3s',
+                '&:hover': {
+                  backgroundColor: '#FFA27F',
+                  color: '#ffffff',
+                },
+              }}
+            >
+              <GitHubIcon />
+            </IconButton>
+          </Box>
         </Box>
 
         <Box sx={{
           display: 'flex',
-          position: 'fixed',
-          top: 150,
-          right: 20,
-          width: 650,
-          height: 600,
+          flexDirection: 'row',
           backgroundColor: 'transparent',
-          alignItems: 'center',
-          justifyContent: 'center',
-          paddingRight: '100px',
-          zIndex: 999,
+          justifyContent: 'flex-end',
         }}>
           <LottieAnimation animationData={HeroImage} width={650} height={600} />
         </Box>
