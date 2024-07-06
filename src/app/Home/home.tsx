@@ -13,7 +13,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Link from 'next/link';
-import Container from "@mui/material/Container";
+
 import DrawerNav from '@/layout/DrawerNav';
 
 
@@ -261,8 +261,9 @@ const Home: React.FC = () => {
             paddingRight: 0,
             paddingTop: 1,
             paddingY: 0
-
           },
+
+
         }}>
           {!isSmDown && (
             <LottieAnimation
