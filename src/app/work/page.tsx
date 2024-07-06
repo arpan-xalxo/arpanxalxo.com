@@ -91,9 +91,10 @@ const Work = () => {
 
               },
               [theme.breakpoints.down('sm')]: {
-                paddingLeft: 4,
+                paddingTop: 2,
+                paddingLeft: 1,
                 paddingRight: 2,
-                gap: 1
+
 
 
               },
