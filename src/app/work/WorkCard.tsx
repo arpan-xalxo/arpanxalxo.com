@@ -30,7 +30,7 @@ interface WorkCardProps {
 const WorkCard: React.FC<WorkCardProps> = ({ workData }) => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
 
   const handleOpen = () => setDialogOpen(true);
   const handleClose = () => setDialogOpen(false);
@@ -41,7 +41,19 @@ const WorkCard: React.FC<WorkCardProps> = ({ workData }) => {
         sx={{
           marginBottom: 2,
           cursor: 'pointer',
-          width: isSmallScreen ? 350 : 400,
+          width: 400,
+
+          [theme.breakpoints.down('md')]: {
+            width: '100%',
+
+
+          },
+          [theme.breakpoints.down('sm')]: {
+            paddingLeft: 6,
+            width: '66%'
+
+
+          },
 
 
         }}
@@ -56,10 +68,19 @@ const WorkCard: React.FC<WorkCardProps> = ({ workData }) => {
             background: workData.style.color,
             padding: 1.5,
             transition: 'box-shadow 0.4s ease',
-            minHeight: 150,
-            minWidth: isSmallScreen ? '100%' : 359.25,
+
             borderRadius: "8px",
             justifyContent: 'space-between',
+
+            [theme.breakpoints.down('md')]: {
+              height: 200,
+              width: 220,
+
+            },
+            [theme.breakpoints.down('sm')]: {
+              height: 170,
+              width: '100%'
+            },
 
           }}
         >
@@ -78,10 +99,32 @@ const WorkCard: React.FC<WorkCardProps> = ({ workData }) => {
             />
           </Box>
           <Box>
-            <Typography variant="h5" sx={{ fontWeight: 'bold', margin: 0, fontSize: 25 }}>
+            <Typography variant="h5" sx={{
+              fontWeight: 'bold',
+              margin: 0,
+              fontSize: 25,
+
+              [theme.breakpoints.down('md')]: {
+                fontSize: 25,
+              },
+
+              [theme.breakpoints.down('sm')]: {
+                fontSize: 18,
+              },
+
+            }}>
               {workData.title}
             </Typography>
-            <Typography variant="subtitle1" sx={{ margin: 0, fontSize: 14, lineHeight: '18px' }}>
+            <Typography variant="subtitle1" sx={{
+              margin: 0,
+              fontSize: 14,
+
+
+              [theme.breakpoints.down('md')]: {
+                fontSize: 12,
+                lineHeight: '16px',
+              }
+            }}>
               {workData.shortDesc}
             </Typography>
           </Box>
@@ -96,7 +139,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ workData }) => {
             marginBottom: 10,
             backgroundColor: '#00001a',
             color: 'white',
-            maxWidth: isSmallScreen ? '90%' : '600px',
+
           },
         }}
       >

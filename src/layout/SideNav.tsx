@@ -38,8 +38,9 @@ const SideNav: React.FC = () => {
           flexDirection: 'row',
           justifyContent: 'center',
           gap: '8px',
-          backgroundColor: 'transparent',
-          marginTop: "30px",
+          padding: 3
+
+
         }}
       >
         {icons.map(({ href, src, label }) => (

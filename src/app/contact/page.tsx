@@ -9,10 +9,7 @@ import DrawerNav from '@/layout/DrawerNav';
 
 const Contact = () => {
   const theme = useTheme();
-  const isXl = useMediaQuery(theme.breakpoints.up('xl'));
-  const isLg = useMediaQuery(theme.breakpoints.up('lg'));
-  const isMd = useMediaQuery(theme.breakpoints.up('md'));
-  const isSm = useMediaQuery(theme.breakpoints.down('sm'));
+
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
   const [mailToString, setMailToString] = useState('');
@@ -36,29 +33,46 @@ const Contact = () => {
 
       <Box sx={{
         display: 'flex',
-        flexDirection: isSm ? 'column' : 'row',
-        paddingTop: isSm ? 2 : 5,
-        paddingLeft: isSm ? 0 : 42,
-        paddingRight: isSm ? 2 : 40,
+        flexDirection: 'row',
+        paddingTop: 5,
+        paddingLeft: 42,
+        paddingRight: 40,
         justifyContent: 'center',
         alignItems: 'center',
-        [theme.breakpoints.down('lg')]: {
-          paddingLeft: 30,
-          paddingRight: 30,
-        },
-        [theme.breakpoints.down('md')]: {
-          paddingLeft: 15,
-          paddingRight: 15,
 
+        [theme.breakpoints.down('lg')]: {
+          paddingLeft: 20,
+          paddingRight: 20,
         },
+        [theme.breakpoints.down('sm')]: {
+          backgroundColor: 'white'
+        },
+
         [theme.breakpoints.down('sm')]: {
           paddingLeft: 1,
           paddingRight: 2,
-
-
         },
+
       }}>
-        <Box sx={{ width: '100%' }}>
+        <Box sx={{
+          width: '50%',
+          [theme.breakpoints.up('lg')]: {
+            paddingRight: 5,
+            paddingLeft: 10,
+            width: '66%',
+
+          },
+          [theme.breakpoints.up('xl')]: {
+            paddingLeft: 10,
+            width: '50%'
+          },
+
+          [theme.breakpoints.down('md')]: {
+            width: '100%',
+          },
+
+
+        }}>
           <Box
             sx={{
               padding: 2,
@@ -68,9 +82,16 @@ const Contact = () => {
               justifyContent: 'center',
               alignItems: 'left',
 
+
             }}
           >
-            <Typography variant="h4" sx={{ color: '#EFDD00', fontWeight: 'bold', marginBottom: '3px', fontSize: 50 }}>
+            <Typography variant="h4" sx={{
+              color: '#EFDD00', fontWeight: 'bold', marginBottom: '3px', fontSize: 50,
+              [theme.breakpoints.down('sm')]: {
+                fontSize: 40
+              },
+
+            }}>
               Contact Me
             </Typography>
             <Typography variant="body1" sx={{ color: 'white', fontWeight: 'bold', fontSize: '16px', marginBottom: '1px' }}>
@@ -81,6 +102,7 @@ const Contact = () => {
               <TextField
                 label="Name"
                 value={name}
+
                 onChange={handleChange(setName)}
                 margin="normal"
                 variant="outlined"
@@ -139,7 +161,7 @@ const Contact = () => {
                   style={{
                     textAlign: 'center',
                     ...theme.typography.body1,
-                    width: isSm ? '100%' : '40%',
+                    width: '40%',
                   }}
                   sx={{
                     color: '#EFDD00',

@@ -42,16 +42,31 @@ const Work = () => {
         <DrawerNav />
       </Hidden>
 
-      <Box>
+      <Box
+        sx={{
+          [theme.breakpoints.down('sm')]: {
+            width: '100%'
+
+          },
+
+        }}
+
+      >
         <Box
           sx={{
             textAlign: 'center',
             padding: 9,
 
-            [theme.breakpoints.down('sm')]: {
-              padding: 1
+
+            [theme.breakpoints.down('md')]: {
+              padding: 8,
 
             },
+            [theme.breakpoints.down('sm')]: {
+              padding: 1,
+              paddingBottom: 4,
+            },
+
 
           }}
         >
@@ -59,8 +74,31 @@ const Work = () => {
             sx={{
               display: 'flex',
               justifyContent: 'center',
-              paddingLeft: 10,
-              gap: 1
+              paddingLeft: 8,
+              gap: 1,
+              [theme.breakpoints.down('md')]: {
+                paddingLeft: 1,
+
+
+              },
+
+              [theme.breakpoints.down('lg')]: {
+                paddingLeft: 5,
+
+              },
+              [theme.breakpoints.up('lg')]: {
+                paddingLeft: 0,
+
+              },
+              [theme.breakpoints.down('sm')]: {
+                paddingLeft: 4,
+                paddingRight: 2,
+
+
+              },
+
+
+
             }}
           >
             <Button
@@ -78,6 +116,11 @@ const Work = () => {
                   backgroundColor: '#EFDD00',
                   color: 'black',
                 }),
+
+                [theme.breakpoints.down('sm')]: {
+                  fontSize: 10
+                },
+
               }}
               variant="outlined"
             >
@@ -97,6 +140,12 @@ const Work = () => {
                   backgroundColor: '#EFDD00',
                   color: 'black',
                 }),
+
+                [theme.breakpoints.down('sm')]: {
+                  fontSize: 10
+
+
+                },
               }}
               variant="outlined"
             >
@@ -117,6 +166,10 @@ const Work = () => {
                   backgroundColor: '#EFDD00',
                   color: 'black',
                 }),
+                [theme.breakpoints.down('sm')]: {
+                  fontSize: 10
+                },
+
               }}
               variant="outlined"
             >
@@ -135,23 +188,21 @@ const Work = () => {
           <Box
             sx={{
               display: 'grid',
-
-              gridTemplateColumns: isXl ? 'repeat(4, 1fr)' : isLg ? 'repeat(3, 1fr)' : isMd ? 'repeat(2, 1fr)' : 'repeat(1, 1fr)',
               gap: 2,
+              gridTemplateColumns: isXl ? 'repeat(4, 1fr)' : isLg ? 'repeat(3, 1fr)' : isMd ? 'repeat(2, 1fr)' : isSm ? 'repeat(2, 1fr)' : 'repeat(1, 1fr)',
 
-
-              [theme.breakpoints.down('md')]: {
-                marginLeft: '20%',
-                marginRight: 'auto',
-                padding: 2,
-                width: 500
-              },
               [theme.breakpoints.down('sm')]: {
-                padding: 2,
-                margin: 0,
-                width: '90%',
+                padding: 6,
+                width: '100%'
 
               },
+
+              [theme.breakpoints.down('sm')]: {
+                width: '100%',
+
+
+              },
+
 
             }}
           >
